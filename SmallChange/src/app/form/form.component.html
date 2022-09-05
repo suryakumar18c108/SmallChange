@@ -1,18 +1,16 @@
+<label for="username"> Username</label>
+<input #user name="username" class="text-box" (keyup)="checkUsername(user.value)" type="text">
+<div *ngIf="userErr">
+    <p class="error">{{userErrMsg}}</p>
+</div>
 
-<form class="outerContainer">
-<label for="username" > Username</label>
-<input name="username" class="text-box" id="user" type="text">
-<span id="username-error" class="username-hide-show username-error-msg">Invalid Username - Must contain between 6 and 24 letters,
-    numbers, underscores or hyphens</span></form>
 
-<label for="password">Password</label>
-<input name="password" class="text-box" id="password" type="password">
-
-<span id="pass-error" class="pass-hide-show pass-error-msg">Invalid Password - Must contain between 6 and 24 letters,
-    numbers, underscores or hyphens</span>
-<!-- <div class="error-pass" id="error_msg">Invalid Password - Must contain between 6 and 24 letter, number, underscore or hypens</div> -->
+<label for="username"> Password</label>
+<input #pass class="pwd-text" name="username" type="password" (keyup)="validatePassword(pass.value)" />
+<div *ngIf="passErr">
+    <p class="passerror">{{passErrMsg}}</p>
+</div>
 
 <div>
     <button type="submit">Log in</button>
 </div>
-

@@ -7,35 +7,49 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
   constructor() {}
-  userBox: string = 'Username';
 
-  public ngOnInit(): void {
-    var user = document.getElementById('user');
-    var errorMsg = document.querySelector(
-      '#username-error'
-    ) as HTMLInputElement | null;
-    var username = document.getElementById('user') as HTMLInputElement | null;
-    var password = document.getElementById(
-      'password'
-    ) as HTMLInputElement | null;
+  ngOnInit(): void {}
 
-    user?.addEventListener('focusout', function (event) {
-      console.log('username', username?.value);
-      console.log('password', password?.value);
+  userErrMsg: string =
+    'Invalid Username - Must contain between 3 and 18 letters, numbers, underscores or hyphens.';
+  userErr: boolean = false;
+  checkUsername(val: string) {
+    var error = document.querySelector('.error');
+    var username = document.querySelector('.text-box');
+    var valid = /^[a-zA-Z0-9_-]+$/;
+    if (!valid.test(val) || val.length < 3 || val.length > 18) {
+      console.log('InValid');
+      // username.style.borderColor = "#DC1616";
+      this.userErr = true;
+    } else {
+      console.log('Valid');
+      // username.style.borderColor = "black";
+      this.userErr = false;
+      // error.style.display = "none";
+    }
+  }
 
-      let inputUserTxt = username?.value;
-      let inputPasswordTxt = password?.value;
-
-      let regex = /^[a-z0-9-_]{6,24}$/i;
-
-      if (inputUserTxt?.match(regex) === null) {
-        console.log('error');
-        errorMsg?.classList.remove('username-hide-show');
-        user?.classList.add('error-input');
-      } else {
-        errorMsg?.classList.add('username-hide-show');
-        user?.classList.remove('error-input');
-      }
-    });
+  // password : string = "Password";
+  passErrMsg: string =
+    'Invalid Password - Must contain between 6 and 24 letters, numbers, underscores or hyphens.';
+  passErr: boolean = false;
+  validatePassword(val: string) {
+    var password = document.querySelector('.pwd-text');
+    var error = document.querySelector('.passerror');
+    var valid = /^[a-zA-Z0-9_-]+$/;
+    if (!valid.test(val) || val.length < 6 || val.length > 24) {
+      if (!password?.classList.contains('invalid'))
+        password?.classList.add('invalid');
+      console.log('InValid');
+      // password.style.border = "solid";
+      // password.style.borderColor = "#DC1616";
+      this.passErr = true;
+    } else {
+      console.log('Valid');
+      if (!password?.classList.contains('invalid'))
+        password?.classList.remove('invalid');
+      // password.style.border = "none";
+      this.passErr = false;
+    }
   }
 }
