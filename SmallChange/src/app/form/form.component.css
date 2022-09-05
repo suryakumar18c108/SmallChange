@@ -1,25 +1,77 @@
-.user-error{
-    color: #DC1616;
-    font-size: 0.8em;
-    font-family: 'Fidelity Sans', Arial, sans-serif;
-    font-weight: bold;
-    display: none;
-    text-align: center;
-  }
+label {
+  margin-bottom: 0.25rem;
+  margin-left: 15px;
+  font-family: "Fidelity-Sans", Arial, sans-serif;
+  font-weight: bold;
+}
 
-  #error_msg{
-    color: #DC1616;
-    font-size: 0.8em;
-    font-family: 'Fidelity Sans', Arial, sans-serif;
-    font-weight: bold;
-    /* display: none; */
-    text-align: center;
-  }
-  .invalid{
-    border: solid;
-    border-color: #DC1616;
-  }
+#outerContainer {
+  margin: 0rem auto;
+  padding: 2rem 3rem;
+  border: solid 1px #ccc;
+  max-width: 18rem;
+  font-family: "Fidelity Sans", Arial, sans-serif;
+}
 
-  .valid{
-    border: none;
-  }
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+.formGroup:last-child {
+  margin-bottom: 0rem;
+}
+
+.text-box {
+  width: 100%;
+  display: block;
+  font-size: 18px;
+  line-height: 1.5em;
+  box-sizing: border-box;
+  padding: 0.25rem 1rem 0.25rem 1rem;
+}
+
+.pwd-text {
+  width: 100%;
+  display: block;
+  font-size: 18px;
+  line-height: 1.5em;
+  box-sizing: border-box;
+  padding: 0.25rem 1rem 0.25rem 1rem;
+}
+
+.error {
+  color: #dc1616;
+  font-size: 0.8em;
+  font-family: "Fidelity Sans", Arial, sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.passerror {
+  color: #dc1616;
+  font-size: 0.8em;
+  font-family: "Fidelity Sans", Arial, sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+button {
+  width: 100%;
+  border: 1px solid black;
+  font-family: "Fidelity Sans", Ariel, sans-serif;
+  font-size: 32px;
+  line-height: 1.5em;
+  text-align: center;
+  background-color: #568200;
+  color: white;
+  border: 0;
+}
+
+#login {
+  border: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  padding-right: 0.6rem;
+  padding-left: 1rem;
+}
