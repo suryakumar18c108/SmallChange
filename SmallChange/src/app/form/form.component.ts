@@ -3,35 +3,39 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+  styleUrls: ['./form.component.css'],
 })
 export class FormComponent implements OnInit {
+  constructor() {}
+  userBox: string = 'Username';
 
-  constructor() { }
-  userBox: string = "Username";
-  
-  ngOnInit(): void {
+  public ngOnInit(): void {
+    var user = document.getElementById('user');
+    var errorMsg = document.querySelector(
+      '#username-error'
+    ) as HTMLInputElement | null;
+    var username = document.getElementById('user') as HTMLInputElement | null;
+    var password = document.getElementById(
+      'password'
+    ) as HTMLInputElement | null;
 
+    user?.addEventListener('focusout', function (event) {
+      console.log('username', username?.value);
+      console.log('password', password?.value);
 
-    var user=document.getElementById("user")
-    var err_msg=document.getElementsByClassName("user-error")[0];
+      let inputUserTxt = username?.value;
+      let inputPasswordTxt = password?.value;
 
-    user?.addEventListener('keyup',(event)=>{
-      console.log(event);
-      /*
-      if(!(String(event.target.value).match(/^[a-zA-Z0-9-_\-]{3,18}$/))){
-        user?.classList.add('error-input')
-        err_msg?.style.display="block";
-        console.log(" In valid input")
-      }
-      else{
+      let regex = /^[a-z0-9-_]{6,24}$/i;
+
+      if (inputUserTxt?.match(regex) === null) {
+        console.log('error');
+        errorMsg?.classList.remove('username-hide-show');
+        user?.classList.add('error-input');
+      } else {
+        errorMsg?.classList.add('username-hide-show');
         user?.classList.remove('error-input');
-        err_msg?.style.display="none";
       }
-      */
-    })
-
-
+    });
   }
-
 }
