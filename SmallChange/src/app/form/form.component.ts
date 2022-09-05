@@ -8,30 +8,51 @@ import { Component, OnInit } from '@angular/core';
 export class FormComponent implements OnInit {
 
   constructor() { }
-  userBox: string = "Username";
   
   ngOnInit(): void {
+  }
 
+  userErrMsg: string = 'Invalid Username - Must contain between 3 and 18 letters, numbers, underscores or hyphens.';
+  userErr: boolean = false;
+  checkUsername(val:string) {
+    var error = document.querySelector('.error');
+    var username = document.querySelector('.text-box');
+    var valid = /^[a-zA-Z0-9_-]+$/;
+    if (!valid.test(val) || val.length<3 || val.length>18) {
+      console.log("InValid");
+      // username.style.borderColor = "#DC1616";
+      this.userErr = true;
+    }
+    else {
+      console.log("Valid");
+      // username.style.borderColor = "black";
+      this.userErr = false;
+      // error.style.display = "none";
+    }
+  }
 
-    var user=document.getElementById("user")
-    var err_msg=document.getElementsByClassName("user-error")[0];
-
-    user?.addEventListener('keyup',(event)=>{
-      console.log(event);
-      /*
-      if(!(String(event.target.value).match(/^[a-zA-Z0-9-_\-]{3,18}$/))){
-        user?.classList.add('error-input')
-        err_msg?.style.display="block";
-        console.log(" In valid input")
-      }
-      else{
-        user?.classList.remove('error-input');
-        err_msg?.style.display="none";
-      }
-      */
-    })
-
-
+  // password : string = "Password";
+  passErrMsg : string = "Invalid Password - Must contain between 6 and 24 letters, numbers, underscores or hyphens.";
+  passErr: boolean = false;
+  validatePassword(val: string){    
+    var password = document.querySelector('.pwd-text');
+    var error = document.querySelector('.passerror');
+    var valid = /^[a-zA-Z0-9_-]+$/;
+    if (!valid.test(val) || val.length<6 || val.length>24) {
+      if(!password?.classList.contains("invalid"))
+          password?.classList.add("invalid");
+      console.log("InValid");
+      // password.style.border = "solid";
+      // password.style.borderColor = "#DC1616";
+      this.passErr = true;
+    }
+    else {
+      console.log("Valid");
+      if(!password?.classList.contains("invalid"))
+          password?.classList.remove("invalid");
+      // password.style.border = "none";
+      this.passErr = false;
+    }
   }
 
 }

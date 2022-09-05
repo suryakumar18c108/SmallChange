@@ -15,3 +15,12 @@
     display: none;
     text-align: center;
   }
+
+  .invalid{
+    border: solid;
+    border-color: #DC1616;
+  }
+
+  .valid{
+    border: none;
+  }
