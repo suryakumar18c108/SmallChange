@@ -1,0 +1,8 @@
+.foot{
+    border-top: 1px solid rgb(189, 188, 188);
+    max-width: 500px;
+    align-self: center;
+    text-align: center;
+    font-family: "Fidelity Sans", Arial, sans-serif;
+    font-weight:700;
+}
