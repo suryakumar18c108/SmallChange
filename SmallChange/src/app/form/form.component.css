@@ -12,10 +12,9 @@
     font-size: 0.8em;
     font-family: 'Fidelity Sans', Arial, sans-serif;
     font-weight: bold;
-    display: none;
+    /* display: none; */
     text-align: center;
   }
-
   .invalid{
     border: solid;
     border-color: #DC1616;

@@ -1,0 +1,11 @@
+#logo{
+    box-sizing: content-box;
+    margin: 0em;
+    padding: 0em;
+    font-family: "Fidelity Sans", Arial, sans-serif;
+    font-size: 32px;
+    line-height: 1.5em;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #568200;
+  }
