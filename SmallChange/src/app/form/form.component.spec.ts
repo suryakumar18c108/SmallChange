@@ -22,4 +22,11 @@ describe('FormComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should retrieve books from the service', () => {
+    expect(component.users.length).toBe(2);
+    expect(component.users[0].title).toBe('The Hobbit');
+    expect(component.users[1].title)
+    .toBe('A Wizard of Earthsea');
+  });
 });
