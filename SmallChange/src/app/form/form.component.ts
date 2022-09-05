@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -29,7 +30,7 @@ export class FormComponent implements OnInit {
    },
  ];
  
-  constructor() { }
+  constructor(private router: Router) { }
   
   ngOnInit(): void {
   }
@@ -75,5 +76,10 @@ export class FormComponent implements OnInit {
       // password.style.border = "none";
       this.passErr = false;
     }
+  }
+
+  redirect()
+  {
+    this.router.navigate(['page']);
   }
 }

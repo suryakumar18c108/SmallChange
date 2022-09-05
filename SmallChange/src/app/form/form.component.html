@@ -1,3 +1,5 @@
+<app-title></app-title>
+
 <form id="outerContainer">
   <div class="formGroup">
     <label for="username"> Username</label>
@@ -28,6 +30,8 @@
   </div>
 
   <div id="login" class="formGroup">
-    <button type="submit">Log in</button>
+    <button (click)="redirect()" type="submit">Log in</button>
   </div>
 </form>
+
+
