@@ -1,0 +1,17 @@
+.user-error{
+    color: #DC1616;
+    font-size: 0.8em;
+    font-family: 'Fidelity Sans', Arial, sans-serif;
+    font-weight: bold;
+    display: none;
+    text-align: center;
+  }
+
+  #error_msg{
+    color: #DC1616;
+    font-size: 0.8em;
+    font-family: 'Fidelity Sans', Arial, sans-serif;
+    font-weight: bold;
+    display: none;
+    text-align: center;
+  }
