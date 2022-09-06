@@ -1,37 +1,37 @@
-<label for="username"> Username</label>
-<!-- <input
-  [(ngModel)]="userInput"
-  (ngModelChange)="checkUsername($event)"
-  name="username"
-  class="text-box"
-  type="text"
-  id="username"
-/> -->
-<input
-  #username
-  name="username"
-  class="text-box"
-  (keyup)="checkUsername(username.value)"
-  type="text"
-  id="username"
-/>
-<div *ngIf="userErr">
-  <p #userError class="error" id="userError">{{ userErrMsg }}</p>
-</div>
+<app-title></app-title>
 
-<label for="username"> Password</label>
-<input
-  #pass
-  class="pwd-text"
-  name="username"
-  type="password"
-  (keyup)="validatePassword(pass.value)"
-  id="password"
-/>
-<div *ngIf="passErr">
-  <p class="passerror" id="passError">{{ passErrMsg }}</p>
-</div>
+<form id="outerContainer">
+  <div class="formGroup">
+    <label for="username"> Username</label>
+    <input
+      #user
+      name="username"
+      class="text-box"
+      (keyup)="checkUsername(user.value)"
+      type="text"
+      id="username"
+    />
+    <div *ngIf="userErr">
+      <p class="error">{{ userErrMsg }}</p>
+    </div>
+  </div>
 
-<div>
-  <button type="submit">Log in</button>
-</div>
+  <div class="formGroup">
+    <label for="username"> Password</label>
+    <input
+      #pass
+      class="pwd-text"
+      name="username"
+      type="password"
+      (keyup)="validatePassword(pass.value)"
+      id="password"
+    />
+    <div *ngIf="passErr">
+      <p class="passerror">{{ passErrMsg }}</p>
+    </div>
+  </div>
+
+  <div id="login" class="formGroup">
+    <button (click)="redirect()" type="submit">Log in</button>
+  </div>
+</form>

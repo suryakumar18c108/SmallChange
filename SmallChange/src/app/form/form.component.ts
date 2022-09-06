@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../models/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -6,8 +8,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form.component.css'],
 })
 export class FormComponent implements OnInit {
-  userInput: string = '';
-  constructor() {}
+  users: User[] = [
+    {
+      clientId: '1',
+      email: 'abc@g.com',
+      dateOfBirth: '20220908',
+      country: 'India',
+      postalCode: '567891',
+      username: 'ABC',
+      password: 'abahh',
+    },
+    {
+      clientId: '2',
+      email: 'xyz@g.com',
+      dateOfBirth: '20220910',
+      country: 'USA',
+      postalCode: '123421',
+      username: 'XYZ',
+      password: 'abahh',
+    },
+  ];
+
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -19,11 +41,11 @@ export class FormComponent implements OnInit {
     var username = document.querySelector('.text-box');
     var valid = /^[a-zA-Z0-9_-]+$/;
     if (!valid.test(val) || val.length < 3 || val.length > 18) {
-      console.log('Invalid username');
+      console.log('InValid');
       // username.style.borderColor = "#DC1616";
       this.userErr = true;
     } else {
-      console.log('Valid username');
+      console.log('Valid');
       // username.style.borderColor = "black";
       this.userErr = false;
       // error.style.display = "none";
@@ -41,16 +63,20 @@ export class FormComponent implements OnInit {
     if (!valid.test(val) || val.length < 6 || val.length > 24) {
       if (!password?.classList.contains('invalid'))
         password?.classList.add('invalid');
-      console.log('InValid pw');
+      console.log('InValid');
       // password.style.border = "solid";
       // password.style.borderColor = "#DC1616";
       this.passErr = true;
     } else {
-      console.log('Valid pw');
+      console.log('Valid');
       if (!password?.classList.contains('invalid'))
         password?.classList.remove('invalid');
       // password.style.border = "none";
       this.passErr = false;
     }
+  }
+
+  redirect() {
+    this.router.navigate(['page']);
   }
 }

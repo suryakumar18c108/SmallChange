@@ -26,6 +26,11 @@ describe('FormComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should retrieve users from the service', () => {
+    expect(component.users.length).toBe(2);
+    expect(component.users[0].country).toBe('India');
+  });
+
   it('should display the error div element when username is invalid', () => {
     const hostElement = fixture.nativeElement;
     const usernameInput: HTMLInputElement =
