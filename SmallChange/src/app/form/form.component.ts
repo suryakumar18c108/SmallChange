@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form.component.css'],
 })
 export class FormComponent implements OnInit {
+  userInput: string = '';
   constructor() {}
 
   ngOnInit(): void {}
@@ -18,11 +19,11 @@ export class FormComponent implements OnInit {
     var username = document.querySelector('.text-box');
     var valid = /^[a-zA-Z0-9_-]+$/;
     if (!valid.test(val) || val.length < 3 || val.length > 18) {
-      console.log('InValid');
+      console.log('Invalid username');
       // username.style.borderColor = "#DC1616";
       this.userErr = true;
     } else {
-      console.log('Valid');
+      console.log('Valid username');
       // username.style.borderColor = "black";
       this.userErr = false;
       // error.style.display = "none";
@@ -40,12 +41,12 @@ export class FormComponent implements OnInit {
     if (!valid.test(val) || val.length < 6 || val.length > 24) {
       if (!password?.classList.contains('invalid'))
         password?.classList.add('invalid');
-      console.log('InValid');
+      console.log('InValid pw');
       // password.style.border = "solid";
       // password.style.borderColor = "#DC1616";
       this.passErr = true;
     } else {
-      console.log('Valid');
+      console.log('Valid pw');
       if (!password?.classList.contains('invalid'))
         password?.classList.remove('invalid');
       // password.style.border = "none";

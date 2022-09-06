@@ -1,27 +1,37 @@
-<<<<<<< HEAD
 <label for="username"> Username</label>
-<input #user name="username" class="text-box" (keyup)="checkUsername(user.value)" type="text">
+<!-- <input
+  [(ngModel)]="userInput"
+  (ngModelChange)="checkUsername($event)"
+  name="username"
+  class="text-box"
+  type="text"
+  id="username"
+/> -->
+<input
+  #username
+  name="username"
+  class="text-box"
+  (keyup)="checkUsername(username.value)"
+  type="text"
+  id="username"
+/>
 <div *ngIf="userErr">
-    <p class="error">{{userErrMsg}}</p>
+  <p #userError class="error" id="userError">{{ userErrMsg }}</p>
 </div>
-
 
 <label for="username"> Password</label>
-<input #pass class="pwd-text" name="username" type="password" (keyup)="validatePassword(pass.value)" />
+<input
+  #pass
+  class="pwd-text"
+  name="username"
+  type="password"
+  (keyup)="validatePassword(pass.value)"
+  id="password"
+/>
 <div *ngIf="passErr">
-    <p class="passerror">{{passErrMsg}}</p>
+  <p class="passerror" id="passError">{{ passErrMsg }}</p>
 </div>
-=======
-<label for="username" > Username</label>
-<input #user name="username" class="text-box" (keyup)="checkUsername(user.value)" type="text">
-<div *ngIf="userErr"> <p class="error">{{userErrMsg}}</p> </div> 
-
-
-<label for="username" > Password</label>
-<input #pass class="pwd-text" name="username" type="password" (keyup)="validatePassword(pass.value)"/>
-<div *ngIf="passErr"> <p class="passerror">{{passErrMsg}}</p> </div>
->>>>>>> 3d96ec7223592335ef87375f6f43b0d1eb94de10
 
 <div>
-    <button type="submit">Log in</button>
+  <button type="submit">Log in</button>
 </div>
