@@ -1,27 +1,37 @@
-<<<<<<< HEAD
-<label for="username"> Username</label>
-<input #user name="username" class="text-box" (keyup)="checkUsername(user.value)" type="text">
-<div *ngIf="userErr">
-    <p class="error">{{userErrMsg}}</p>
-</div>
+<app-title></app-title>
 
+<form id="outerContainer">
+  <div class="formGroup">
+    <label for="username"> Username</label>
+    <input
+      #user
+      name="username"
+      class="text-box"
+      (keyup)="checkUsername(user.value)"
+      type="text"
+      id="username"
+    />
+    <div *ngIf="userErr" id="userError">
+      <p class="error">{{ userErrMsg }}</p>
+    </div>
+  </div>
 
-<label for="username"> Password</label>
-<input #pass class="pwd-text" name="username" type="password" (keyup)="validatePassword(pass.value)" />
-<div *ngIf="passErr">
-    <p class="passerror">{{passErrMsg}}</p>
-</div>
-=======
-<label for="username" > Username</label>
-<input #user name="username" class="text-box" (keyup)="checkUsername(user.value)" type="text">
-<div *ngIf="userErr"> <p class="error">{{userErrMsg}}</p> </div> 
+  <div class="formGroup">
+    <label for="username"> Password</label>
+    <input
+      #pass
+      class="pwd-text"
+      name="username"
+      type="password"
+      (keyup)="validatePassword(pass.value)"
+      id="password"
+    />
+    <div *ngIf="passErr" id="passwordError">
+      <p class="passerror">{{ passErrMsg }}</p>
+    </div>
+  </div>
 
-
-<label for="username" > Password</label>
-<input #pass class="pwd-text" name="username" type="password" (keyup)="validatePassword(pass.value)"/>
-<div *ngIf="passErr"> <p class="passerror">{{passErrMsg}}</p> </div>
->>>>>>> 3d96ec7223592335ef87375f6f43b0d1eb94de10
-
-<div>
-    <button type="submit">Log in</button>
-</div>
+  <div id="login" class="formGroup">
+    <button (click)="redirect()" type="submit">Log in</button>
+  </div>
+</form>

@@ -7,7 +7,8 @@ import { FooterComponent } from './footer/footer.component';
 import { TitleComponent } from './title/title.component';
 import { FormComponent } from './form/form.component';
 import { PageComponent } from './page/page.component';
-
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,9 @@ import { PageComponent } from './page/page.component';
     PageComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
