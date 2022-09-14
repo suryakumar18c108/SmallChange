@@ -6,6 +6,39 @@
     font-size: 32px;
     line-height: 1.5em;
     text-decoration: none;
-    color: #ffffff;
+    color: #FFF;
     background-color: #568200;
   }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: 'Fidelity Sans', Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.5em;
+  color: #356F95;
+}
+
+li a:hover {
+  background-color: #000;
+}
+li a:visited {
+  background-color: #5C0198;
+}
+li a:focus {
+  border: 1px dotted #ccc;
+}
