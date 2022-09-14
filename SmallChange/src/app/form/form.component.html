@@ -1,6 +1,6 @@
 <app-title></app-title>
 
-<form id="outerContainer">
+<form id="outerContainer" >
   <div class="formGroup">
     <label for="username"> Username</label>
     <input
@@ -32,6 +32,7 @@
   </div>
 
   <div id="login" class="formGroup">
-    <button (click)="redirect()" type="submit">Log in</button>
+    <button (click)="redirect()" [disabled]="disable" type="submit">
+      Log in</button>
   </div>
 </form>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',

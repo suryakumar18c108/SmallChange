@@ -2,6 +2,6 @@ import { User } from './user';
 
 describe('User', () => {
   it('should create an instance', () => {
-    expect(new User ('2','xyz@g.com', '20220910', 'USA', '123421', 'XYZ', 'abahh')).toBeTruthy();
+    expect(new User ('user1','first', 'last', 'lockpass', 'xyz@g.com', 'clientId' , '21/03/2000',  80192847833, 3)).toBeTruthy();    
   });
 });
