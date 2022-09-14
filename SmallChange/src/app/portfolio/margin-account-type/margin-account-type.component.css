@@ -1,0 +1,14 @@
+:host {
+  display: block;
+}
+
+:host ::ng-deep .ag-row:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+ag-grid-angular {
+  margin: auto;
+}
+.classRed{
+    background-color: red;
+}

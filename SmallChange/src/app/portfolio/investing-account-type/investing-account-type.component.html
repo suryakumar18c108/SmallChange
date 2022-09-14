@@ -1,0 +1,58 @@
+<div class="cardContainer">
+<div class="card">
+  <div class="actualNumbers">
+    <span>{{ total }}</span>
+
+    <span>Overall return</span>
+  </div>
+  <div class="actualPercentage">
+    <span>10</span>
+  </div>
+</div>
+<div class="card">
+  <div class="actualNumbers">
+    <span>{{ total }}</span>
+
+    <span>Overall return</span>
+  </div>
+  <div class="actualPercentage">
+    <span>10</span>
+  </div>
+</div>
+<div class="card">
+  <div class="actualNumbers">
+    <span>{{ total }}</span>
+
+    <span>Overall return</span>
+  </div>
+  <div class="actualPercentage">
+    <span>10</span>
+  </div>
+</div>
+<div class="card">
+  <div class="actualNumbers">
+    <span>{{ total }}</span>
+
+    <span>Overall return</span>
+  </div>
+  <div class="actualPercentage">
+    <span>10</span>
+  </div>
+</div>
+</div>
+<ag-grid-angular
+  style="width: 95%; height: 35em"
+  class="ag-theme-alpine"
+  [rowData]="investingStockData"
+  [columnDefs]="columnDefsStock"
+  [gridOptions]="gridOptionsStock"
+>
+</ag-grid-angular>
+<ag-grid-angular
+  style="width: 95%; height: 35em"
+  class="ag-theme-alpine"
+  [rowData]="investingEtfData"
+  [columnDefs]="columnDefsEtf"
+  [gridOptions]="gridOptionsEtf"
+>
+</ag-grid-angular>

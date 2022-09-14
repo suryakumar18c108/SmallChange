@@ -1,0 +1,24 @@
+<div class="portfolioContainer">
+<h1>View Current Portfolio</h1>
+<mat-tab-group dynamicHeight animationDuration="0ms"  mat-stretch-tabs 
+ class="example-stretched-tabs mat-elevation-z4"> 
+  <mat-tab label="Investing account" >
+    <app-investing-account-type
+      [investingStockData]="investingStockData"
+      [investingEtfData]="investingEtfData"
+    ></app-investing-account-type>
+  </mat-tab>
+  <mat-tab label="Cash account">
+    <app-cash-account-type
+      [cashCashData]="cashCashData"
+    ></app-cash-account-type>
+  </mat-tab>
+  <mat-tab label="Margin Account">
+    <app-margin-account-type
+      *ngIf="marginStockData.length"
+      [marginStockData]="marginStockData"
+    >
+    </app-margin-account-type>
+  </mat-tab>
+</mat-tab-group>
+</div>

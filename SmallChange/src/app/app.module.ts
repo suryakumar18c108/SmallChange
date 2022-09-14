@@ -8,7 +8,13 @@ import { TitleComponent } from './title/title.component';
 import { FormComponent } from './form/form.component';
 import { PageComponent } from './page/page.component';
 import { RouterModule } from '@angular/router';
+import { PortfolioModule } from './portfolio/portfolio.module';
+
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AgGridColumn, AgGridModule } from 'ag-grid-angular';
+import { MatTabsModule } from '@angular/material/tabs';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,14 +22,18 @@ import { AppRoutingModule } from './app-routing.module';
     FooterComponent,
     TitleComponent,
     FormComponent,
-    PageComponent
+    PageComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PortfolioModule,
+    BrowserAnimationsModule,
+    AgGridModule,
+    MatTabsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

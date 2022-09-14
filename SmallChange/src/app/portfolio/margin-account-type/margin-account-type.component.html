@@ -1,0 +1,34 @@
+<div class="cardContainer">
+<div class="card">
+  <div class="actualNumbers">
+    <span>{{ marketValue }}</span>
+
+    <span>Securities value</span>
+  </div>
+  <!-- <div class="actualPercentage">
+    <span>10</span>
+  </div> -->
+</div>
+
+ <div class="card" [ngClass]="{
+   'classred': gainLoss.toString()[0]==='-'
+}">
+  <div class="actualNumbers" >
+    <span>{{ gainLoss.toFixed(2) }}</span>
+
+    <span *ngIf="gainLoss.toString()[0]==='-'">Loss</span>
+        <span *ngIf="gainLoss.toString()[0]!=='-'">Gain</span>
+
+  </div>
+  <div class="actualPercentage">
+    <span>{{gainLossPercent.toFixed(2)}} %</span>
+  </div>
+</div> 
+</div>
+<ag-grid-angular
+    style="width: 95%"
+    class="ag-theme-alpine"
+    [rowData]="marginStockData"
+    [columnDefs]="columnDefsMargin"
+    [gridOptions]="gridOptions">
+</ag-grid-angular>
