@@ -75,3 +75,7 @@ button {
   padding-right: 0.6rem;
   padding-left: 1rem;
 }
+
+button:disabled {
+  background-color: rgb(114, 117, 114);
+}

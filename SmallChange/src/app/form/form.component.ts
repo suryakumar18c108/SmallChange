@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -11,6 +12,9 @@ export class FormComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
+  
+ disable:boolean = true
+
   users: User[] = [
     {
       clientId: '1',
@@ -73,7 +77,16 @@ export class FormComponent implements OnInit {
       // password.style.border = "none";
       this.passErr = false;
     }
+
+    if(this.userErr==false && this.passErr==false)
+    {
+      this.disable=false;
+    }
+      
+    
   }
+
+  
 
   redirect() {
     this.router.navigate(['page']);
