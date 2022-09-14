@@ -9,30 +9,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./form.component.css'],
 })
 export class FormComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
-  ngOnInit(): void {}
-  users: User[] = [
-    {
-      clientId: '1',
-      email: 'abc@g.com',
-      dateOfBirth: '20220908',
-      country: 'India',
-      postalCode: '567891',
-      username: 'ABC',
-      password: 'abahh',
-    },
-    {
-      clientId: '2',
-      email: 'xyz@g.com',
-      dateOfBirth: '20220910',
-      country: 'USA',
-      postalCode: '123421',
-      username: 'XYZ',
-      password: 'abahh',
-    },
-  ];
-
+  disable: boolean = true;
+  ngOnInit(): void { }
   userErrMsg: string =
     'Invalid Username - Must contain between 3 and 18 letters, numbers, underscores or hyphens.';
   userErr: boolean = false;
@@ -74,8 +54,10 @@ export class FormComponent implements OnInit {
       // password.style.border = "none";
       this.passErr = false;
     }
+    if (this.userErr == false && this.passErr == false) {
+      this.disable = false;
+    }
   }
-
   redirect() {
     this.router.navigate(['page']);
   }
