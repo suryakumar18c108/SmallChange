@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -11,7 +12,28 @@ export class FormComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
-    userErrMsg: string =
+  users: User[] = [
+    {
+      clientId: '1',
+      email: 'abc@g.com',
+      dateOfBirth: '20220908',
+      country: 'India',
+      postalCode: '567891',
+      username: 'ABC',
+      password: 'abahh',
+    },
+    {
+      clientId: '2',
+      email: 'xyz@g.com',
+      dateOfBirth: '20220910',
+      country: 'USA',
+      postalCode: '123421',
+      username: 'XYZ',
+      password: 'abahh',
+    },
+  ];
+
+  userErrMsg: string =
     'Invalid Username - Must contain between 3 and 18 letters, numbers, underscores or hyphens.';
   userErr: boolean = false;
   checkUsername(val: string) {

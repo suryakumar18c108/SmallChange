@@ -66,10 +66,61 @@ describe('FormComponent', () => {
     passwordInput.dispatchEvent(new Event('keyup'));
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    const errorUsername = compiled.querySelector('#userError');
+    const errorUsername = compiled.querySelector('#usernameError');
     // console.log(errorUsername);
     expect(errorUsername).toBeTruthy();
   });
+  it('should display the error div element when password is invalid', () => {
+    const hostElement = fixture.nativeElement;
+    const usernameInput: HTMLInputElement =
+      hostElement.querySelector('#username');
+    const passwordInput: HTMLInputElement =
+      hostElement.querySelector('#password');
+    usernameInput.value = 'abcvgsgg';
+    passwordInput.value = 'a';
+    usernameInput.dispatchEvent(new Event('keyup'));
+    passwordInput.dispatchEvent(new Event('keyup'));
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    const errorPassword = compiled.querySelector('#passwordError');
+    expect(errorPassword).toBeTruthy();
+  });
+  it('should not display any error div element when username and password are valid', () => {
+    const hostElement = fixture.nativeElement;
+    const usernameInput: HTMLInputElement =
+      hostElement.querySelector('#username');
+    const passwordInput: HTMLInputElement =
+      hostElement.querySelector('#password');
+    usernameInput.value = 'abcvgsgg';
+    passwordInput.value = 'hvusiuvs';
+    usernameInput.dispatchEvent(new Event('keyup'));
+    passwordInput.dispatchEvent(new Event('keyup'));
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    const errorPassword = compiled.querySelector('#passwordError');
+    const errorUsername = compiled.querySelector('#usernameError');
+
+    expect(errorPassword).toBeFalsy();
+    expect(errorUsername).toBeFalsy();
+  });
+   it('should not display error div elements when username and password are invalid', () => {
+     const hostElement = fixture.nativeElement;
+     const usernameInput: HTMLInputElement =
+       hostElement.querySelector('#username');
+     const passwordInput: HTMLInputElement =
+       hostElement.querySelector('#password');
+     usernameInput.value = 'a';
+     passwordInput.value = 'b';
+     usernameInput.dispatchEvent(new Event('keyup'));
+     passwordInput.dispatchEvent(new Event('keyup'));
+     fixture.detectChanges();
+     const compiled = fixture.debugElement.nativeElement;
+     const errorPassword = compiled.querySelector('#passwordError');
+     const errorUsername = compiled.querySelector('#usernameError');
+
+     expect(errorPassword).toBeTruthy();
+     expect(errorUsername).toBeTruthy();
+   });
   // it('should find the <p> with fixture.debugElement.query(By.css)', () => {
   //   const bannerDe: DebugElement = fixture.debugElement;
   //   const paragraphDe = bannerDe.query(By.css('p'));

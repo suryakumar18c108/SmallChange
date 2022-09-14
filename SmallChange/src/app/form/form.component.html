@@ -1,6 +1,6 @@
 <app-title></app-title>
 
-<form id="outerContainer">
+<form id="outerContainer" >
   <div class="formGroup">
     <label for="username"> Username</label>
     <input
@@ -11,7 +11,7 @@
       type="text"
       id="username"
     />
-    <div *ngIf="userErr" id="userError">
+    <div *ngIf="userErr" id="usernameError">
       <p class="error">{{ userErrMsg }}</p>
     </div>
   </div>
@@ -32,6 +32,7 @@
   </div>
 
   <div id="login" class="formGroup">
-    <button (click)="redirect()" type="submit">Log in</button>
+    <button (click)="redirect()" [disabled]="disable" type="submit">
+      Log in</button>
   </div>
 </form>
